@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Personsinfo">
+    <select id="selectCityById" parameterType="String" resultType="Person">
+        select person_name personName,person_id personId,my_collects myCollects from fiora_person where person_name = #{name} and person_id > 100
+    </select>
+    <insert id="insert">
+        insert fiora_person (person_id,person_name,my_collects) VALUES (#{personId},#{personName},#{myCollects});
+    </insert>
+</mapper>
